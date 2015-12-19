@@ -1,0 +1,60 @@
+ create database payroll_system;
+ use payroll_system;
+ create table employee
+    -> (
+    -> id int (3) primary key,
+    -> fname varchar (10),
+    -> lname varchar (10),
+    -> phone int (11),
+    -> email varchar (20),
+    -> birth_date int (10),
+    -> address varchar (35),
+    -> designation varchar (10),
+    -> password varchar (20));
+ describe employee;
+ create table department
+    -> (
+    -> id int (3) primary key,
+    -> name varchar (10),
+    -> emp_id int (3),
+    -> constraint emp_id foreign key (emp_id) references employee(id));
+ describe department;
+ create table salary
+    -> (
+    -> base int (7),
+    -> meds_allow int (7),
+    -> bonus int (7),
+    -> advance int (7),
+    -> travel_allow int (7),
+    -> overtime int (7),
+    -> daily_sal int (7));
+ describe salary;
+ create table deduction
+    -> (
+    -> loan int (7),
+    -> tax int (7),
+    -> half_day int (7),
+    -> rent int (7),
+    -> ecs int (7),
+    -> absence int (7));
+ describe deduction;
+ create table pay_slip
+    -> (
+    -> emp_id int (3),
+    -> designation varchar (10),
+    -> gen_date int (10),
+    -> for_month varchar (10),
+    -> base int (7),
+    -> absence int (7),
+    -> daily_sal int (7),
+    -> net_deduction int (7),
+    -> net_sal int (7));
+ describe pay_slip;
+ 
+ insert into employee  values   (001,'william','shakspear',7208560470,'willys@gmail.com',26041564,'stratford-upon-avon-warwikshir','writer','pass@123');
+
+ insert into department  values (001,'arts',001);
+
+ insert into deduction values (12,13,14,15,16,17);
+
+ insert into pay_slip values (001,'arts craft',21122015,'january',13,14,15,16,17);
