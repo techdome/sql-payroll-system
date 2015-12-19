@@ -58,3 +58,20 @@
  insert into deduction values (12,13,14,15,16,17);
 
  insert into pay_slip values (001,'arts craft',21122015,'january',13,14,15,16,17);
+ 
+  insert into salary values (12,13,14,15,16,17)
+
+ select * from employee;
+ select * from department;
+ select * from salary;
+ select * from deduction;
+ select * from pay_slip;
+
+very rough alpha build 
+need to add data for all table 
+dont know how to add date and time functions but we can add them in pay_slip table
+no foreign key constraints work
+can add or remove excessive attributes and entities 
+so if we want to add office or hgotel we only nned to make changes in department name and in department table only
+and someone must make final er daigram if everything is set to present
+any other suggessions are welcome
